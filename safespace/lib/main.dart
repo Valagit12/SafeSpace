@@ -18,6 +18,13 @@ void main() async {
       provisional: false,
       sound: true);
   print('User granted permissions  + ${settings.authorizationStatus}');
+  FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+    print("got message foreground");
+    print("data: ${message.data}");
+    if (message.notification != null) {
+      print("notification ${message.notification}");
+    }
+  });
   runApp(const MyApp());
 }
 
