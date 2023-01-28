@@ -1,7 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:safespace/firebase_options.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+
 import 'palette.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  FirebaseMessaging firebaseMessaging = FirebaseMessaging.instance;
+  NotificationSettings settings = await firebaseMessaging.requestPermission(
+      alert: true,
+      announcement: false,
+      badge: true,
+      carPlay: false,
+      criticalAlert: false,
+      provisional: false,
+      sound: true);
+  print('User granted permissions  + ${settings.authorizationStatus}');
   runApp(const MyApp());
 }
 
