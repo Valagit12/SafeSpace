@@ -29,6 +29,13 @@
             {
               "client_id": "887515720483-ouhb9bs8erhsicl8b13b7g1n9jp9nhkk.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "887515720483-op8iiqhlrq5c6eb3alk8j89ei9v6pm3q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.safespace"
+              }
             }
           ]
         }
