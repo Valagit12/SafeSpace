@@ -17,24 +17,16 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
+      case TargetPlatform.macOS:
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -52,6 +44,16 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyAdd9tPdbE6TBo-BkrPlY5FyyShK5Foi3c',
+    appId: '1:887515720483:web:bcfb35221385a948f4ba96',
+    messagingSenderId: '887515720483',
+    projectId: 'safespace-cec3e',
+    authDomain: 'safespace-cec3e.firebaseapp.com',
+    storageBucket: 'safespace-cec3e.appspot.com',
+    measurementId: 'G-FQC1YKX12J',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDkgI_Dq9Q6XZE9EvTZjPfv0qplKaZBa3Y',
     appId: '1:887515720483:android:6fb793e136dd0282f4ba96',
@@ -59,4 +61,25 @@ class DefaultFirebaseOptions {
     projectId: 'safespace-cec3e',
     storageBucket: 'safespace-cec3e.appspot.com',
   );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyDfO5VG7IPFobHtAueLFSa8YVGQIP3NVxE',
+    appId: '1:887515720483:ios:24d85e7afae7e2a9f4ba96',
+    messagingSenderId: '887515720483',
+    projectId: 'safespace-cec3e',
+    storageBucket: 'safespace-cec3e.appspot.com',
+    iosClientId: '887515720483-op8iiqhlrq5c6eb3alk8j89ei9v6pm3q.apps.googleusercontent.com',
+    iosBundleId: 'com.example.safespace',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyDfO5VG7IPFobHtAueLFSa8YVGQIP3NVxE',
+    appId: '1:887515720483:ios:24d85e7afae7e2a9f4ba96',
+    messagingSenderId: '887515720483',
+    projectId: 'safespace-cec3e',
+    storageBucket: 'safespace-cec3e.appspot.com',
+    iosClientId: '887515720483-op8iiqhlrq5c6eb3alk8j89ei9v6pm3q.apps.googleusercontent.com',
+    iosBundleId: 'com.example.safespace',
+  );
+
 }
