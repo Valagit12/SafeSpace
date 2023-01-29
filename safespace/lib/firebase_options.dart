@@ -23,6 +23,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
+      case TargetPlatform.macOS:
         return ios;
       case TargetPlatform.macOS:
         return macos;
@@ -80,4 +81,5 @@ class DefaultFirebaseOptions {
     iosClientId: '887515720483-op8iiqhlrq5c6eb3alk8j89ei9v6pm3q.apps.googleusercontent.com',
     iosBundleId: 'com.example.safespace',
   );
+
 }
